@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7-Day AQI Forecast | AirSense</title>
+
+    <!-- Your existing CSS -->
+    <link rel="stylesheet" href="forecast.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-50 min-h-screen flex flex-col">
+
+<!-- HEADER -->
+<header class="header">
+    <h1>AQI Forecast - All Regions</h1>
+</header>
+
+<!-- RANK-BASED BENCHMARK TABLE -->
+<section class="max-w-4xl mx-auto mt-8 px-4">
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-red-300">
+        <div class="bg-red-600 text-white px-6 py-4 font-bold tracking-wide">
+            AQI Ranking Benchmarks (Locality-wise)
+        </div>
+
+        <table class="w-full text-sm text-left">
+            <thead class="bg-red-100 text-red-700 uppercase text-xs">
+                <tr>
+                    <th class="px-6 py-3">Rank Range</th>
+                    <th class="px-6 py-3">Air Quality Level</th>
+                    <th class="px-6 py-3">Meaning</th>
+                </tr>
+            </thead>
+
+            <tbody class="divide-y divide-red-100">
+                <tr class="hover:bg-red-50">
+                    <td class="px-6 py-4 font-bold">Rank 1 – 2</td>
+                    <td class="px-6 py-4 text-green-600 font-semibold">Good</td>
+                    <td class="px-6 py-4">Cleanest air among monitored localities</td>
+                </tr>
+
+                <tr class="hover:bg-red-50">
+                    <td class="px-6 py-4 font-bold">Rank 3 – 4</td>
+                    <td class="px-6 py-4 text-yellow-600 font-semibold">Satisfactory</td>
+                    <td class="px-6 py-4">Acceptable air quality with minor pollution</td>
+                </tr>
+
+                <tr class="hover:bg-red-50">
+                    <td class="px-6 py-4 font-bold">Rank 5 – 6</td>
+                    <td class="px-6 py-4 text-orange-600 font-semibold">Moderate</td>
+                    <td class="px-6 py-4">Noticeable pollution, sensitive people affected</td>
+                </tr>
+
+                <tr class="hover:bg-red-50">
+                    <td class="px-6 py-4 font-bold">Rank 7 – 8</td>
+                    <td class="px-6 py-4 text-red-500 font-semibold">Poor</td>
+                    <td class="px-6 py-4">Unhealthy air, breathing discomfort likely</td>
+                </tr>
+
+                <tr class="hover:bg-red-50">
+                    <td class="px-6 py-4 font-bold">Rank 9+</td>
+                    <td class="px-6 py-4 text-red-800 font-semibold">Severe</td>
+                    <td class="px-6 py-4">Worst affected areas, avoid outdoor exposure</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- FORECAST SECTION -->
+<section class="forecast-container mt-10 px-4" id="forecast">
+    <!-- Cards injected by forecast.js -->
+</section>
+
+<!-- BOTTOM ACTION SECTION -->
+<section class="mt-16 pb-10">
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="bg-white border border-slate-200 rounded-2xl shadow-lg p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            
+            <div>
+                <h3 class="text-lg font-semibold text-slate-800">
+                    Want to compare your locality?
+                </h3>
+                <p class="text-sm text-slate-500">
+                    View how different regions rank based on AQI levels
+                </p>
+            </div>
+
+            <button
+                id="rankBtn"
+                class="px-6 py-3 rounded-xl bg-red-600 text-white font-semibold shadow-md hover:bg-red-700 transition"
+            >
+                📊 Show Locality Rank
+            </button>
+
+        </div>
+    </div>
+</section>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="forecast.js"></script>
+
+</body>
+</html>
+
+

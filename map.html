@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Air Quality Map | AirSense</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="map.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-content">
+        <h1 class="logo">AirSense</h1>
+        <a href="first.html" class="back-button">← Back to Home</a>
+    </div>
+</header>
+
+<div class="map-container">
+    <div id="map"></div>
+
+    <!-- Search Box -->
+    <div class="search-box">
+        <input type="text" id="locationSearch" placeholder="Search location (Delhi)">
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- Info Panel -->
+    <div class="info-panel">
+        <h2>Air Quality Index</h2>
+        <div class="aqi-legend">
+            <div class="legend-item"><span class="legend-color" style="background:#00e400"></span>Good (0–50)</div>
+            <div class="legend-item"><span class="legend-color" style="background:#ffff00"></span>Moderate (51–100)</div>
+            <div class="legend-item"><span class="legend-color" style="background:#ff7e00"></span>Unhealthy (101–150)</div>
+            <div class="legend-item"><span class="legend-color" style="background:#ff0000"></span>Very Unhealthy (151–200)</div>
+            <div class="legend-item"><span class="legend-color" style="background:#8f3f97"></span>Severe (201–300)</div>
+            <div class="legend-item"><span class="legend-color" style="background:#7e0023"></span>Hazardous (301+)</div>
+        </div>
+    </div>
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Your JS -->
+<script src="map.js"></script>
+</body>
+</html>
+

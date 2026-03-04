@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+.header {
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.forecast-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.forecast-card h3 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+
+.forecast-card canvas {
+    height: 200px !important;
+    margin-top: 15px;
+}
+
+.aqi {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8f3f97;
+    margin: 10px 0;
+    text-align: center;
+}

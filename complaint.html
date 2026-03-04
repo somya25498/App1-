@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Report Air Pollution | AirSense</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-900 flex items-center justify-center p-6">
+
+<div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl">
+    <h1 class="text-2xl font-black mb-4 text-center">🚨 Report Pollution</h1>
+
+    <p class="text-xs text-slate-500 mb-6 text-center">
+        This complaint is submitted anonymously.
+        No personal data is collected.
+    </p>
+
+    <form id="complaintForm" class="space-y-4">
+        <input required placeholder="Locality"
+            class="w-full border rounded-xl p-3" id="locality">
+
+        <input required type="number" placeholder="Observed AQI"
+            class="w-full border rounded-xl p-3" id="aqi">
+
+        <select id="severity" class="w-full border rounded-xl p-3">
+            <option>Low</option>
+            <option>Moderate</option>
+            <option>High</option>
+            <option>Severe</option>
+        </select>
+
+        <textarea required placeholder="Describe the issue..."
+            class="w-full border rounded-xl p-3" id="description"></textarea>
+
+        <button class="w-full bg-red-600 text-white py-3 rounded-xl font-bold hover:bg-red-700">
+            Submit Anonymous Complaint
+        </button>
+    </form>
+</div>
+
+<script>
+document.getElementById("complaintForm").onsubmit = function(e) {
+    e.preventDefault();
+
+    const complaint = {
+        locality: locality.value,
+        aqi: aqi.value,
+        severity: severity.value,
+        description: description.value,
+        status: "Pending",
+        date: new Date().toLocaleDateString()
+    };
+
+    const existing = JSON.parse(localStorage.getItem("complaints") || "[]");
+    existing.push(complaint);
+    localStorage.setItem("complaints", JSON.stringify(existing));
+
+    window.location.href = "complaint_public.html";
+};
+</script>
+
+</body>
+</html>
+
